@@ -1,6 +1,4 @@
 <!DOCTYPE html>
- <script src="coi-serviceworker.js"></script>
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -111,9 +109,16 @@ body {
 			<div id="status-notice"></div>
 		</div>
 
-		<script src="TofuRPG.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"TofuRPG","experimentalVK":false,"fileSizes":{"TofuRPG.pck":4475252,"TofuRPG.wasm":1656762},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+if (!window.SharedArrayBuffer) {
+	document.getElementById('status').style.display = 'none';
+	setTimeout(() => document.getElementById('status').style.display = '', 1500);
+}
+</script>
+<script src="coi-serviceworker.min.js"></script>
+<script src="TofuRPG.js"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"TofuRPG","experimentalVK":false,"fileSizes":{"TofuRPG.pck":4475460,"TofuRPG.wasm":1656762},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = true;
 const engine = new Engine(GODOT_CONFIG);
 
